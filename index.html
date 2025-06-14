@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactbook-App</title>
+        
+</head>
+<body onload="fetchContact()">
+
+    <div id="table">Contact loading...</div>
+    <button id="refresh" type="button">Refresh</button>
+    <button id="addcontact" type="button">Add Contact</button>
+
+    <script src="config.js"></script>
+    <script>
+        function fetchContact(){
+            fetch(rootPath +"controller/get-contact/")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                //displayOutput(data);
+                console.log(data);
+            })
+        }
+    </script>
+</body>
+</html>
+
